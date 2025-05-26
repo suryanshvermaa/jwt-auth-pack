@@ -1,6 +1,6 @@
 {
   "name": "jwt-auth-pack",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "jwt auth package",
   "main": "dist/index.js",
   "types": "types/",

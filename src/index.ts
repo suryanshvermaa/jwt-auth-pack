@@ -14,9 +14,9 @@ class UserAuth extends TokenClass{
     }
     /**
      * Middleware to authenticate user requests using JWT token
-     * @param {Request} req - Express request object
-     * @param {Response} res - Express response object
-     * @param {NextFunction} next - Express next function
+     * @param {import("express").Request} req - Express request object
+     * @param {import("express").Response} res - Express response object
+     * @param {import("express").NextFunction} next - Express next function
      * @returns {Promise<void>}
      */
     async auth(req:Request,res:Response,next:NextFunction):Promise<void>{
