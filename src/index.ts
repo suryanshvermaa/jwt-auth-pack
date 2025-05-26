@@ -9,7 +9,7 @@ class UserAuth extends TokenClass{
     }
     async auth(req:Request,res:Response,next:NextFunction):Promise<void>{
         try {
-            const {authToken}=req.body||req.query||req.params;
+            const {authToken}=req.body||req.query||req.params||req.headers["authtoken"]||req.headers["authorization"]?.split("Bcrypt ")[1];
             if(!authToken){
                 res.status(401).json({
                     success:false,
@@ -36,7 +36,7 @@ class UserAuth extends TokenClass{
             }
         })
     }
-    public async comparePassword(hashedPassword:string,password:string):Promise<boolean>{
+    public async comparePassword(password:string,hashedPassword:string):Promise<boolean>{
         return new Promise(async(resolve,reject)=>{
             try {
                 const isEqual=await bcrypt.compare(password,hashedPassword);
