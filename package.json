@@ -1,6 +1,6 @@
 {
   "name": "jwt-auth-pack",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "jwt auth package",
   "main": "dist/index.js",
   "types": "types/",
@@ -18,8 +18,8 @@
     "build": "tsc"
   },
   "repository": {
-  "type": "git",
-  "url": "https://github.com/suryanshvermaa/jwt-auth-pack.git"
+    "type": "git",
+    "url": "https://github.com/suryanshvermaa/jwt-auth-pack.git"
   },
   "keywords": [],
   "author": "suryansh verma",
