@@ -21,8 +21,8 @@ class TokenClass{
     }
     /**
      * Creates a JWT token with the provided data and expiration time
-     * @param {{userId:String|Number,data:Object}} data - Data to be included in the token
-     * @param {Number} time - Expiration time in minutes
+     * @param {{userId:string|number,data:object}} data - Data to be included in the token
+     * @param {number} time - Expiration time in minutes
      * @returns {Promise<String>} - Returns a promise that resolves to the created token
      */
     public async createToken(data:{userId:string|number,data:object},time:number):Promise<string>{
@@ -37,7 +37,7 @@ class TokenClass{
     }
     /**
      * Verifies the provided JWT token
-     * @param {String} token - The JWT token to verify
+     * @param {string} token - The JWT token to verify
      * @returns {Promise<IVerified>} - Returns a promise that resolves to an object containing verification status and data
      */
     public async verifyToken(token:string):Promise<IVerified>{
