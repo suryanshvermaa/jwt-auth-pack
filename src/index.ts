@@ -9,7 +9,7 @@ class UserAuth extends TokenClass{
     }
     async auth(req:Request,res:Response,next:NextFunction):Promise<void>{
         try {
-            const {authToken}=req.body||req.query||req.params||req.headers["authtoken"]||req.headers["authorization"]?.split("Bcrypt ")[1];
+            const {authToken}=req.body||req.query||req.params||req.headers["authtoken"]||req.headers["authorization"]?.split("Bcrypt ")[1]||req.cookies["authToken"];
             if(!authToken){
                 res.status(401).json({
                     success:false,

@@ -72,6 +72,9 @@ The middleware automatically verifies tokens from:
 - Request body (`req.body.authToken`)
 - Query parameters (`req.query.authToken`)
 - URL parameters (`req.params.authToken`)
+- Request headers (`req.headers.authorization`) // Bearer token format
+- Request headers (`req.headers.authToken`)
+- Cookies (`req.cookies.authToken`)
 
 ## API Reference
 
@@ -103,7 +106,7 @@ createToken(data: object, time: number): Promise<string>
 
 Creates a new JWT token.
 
-- `data`: Object containing user data
+- `data`: Object containing user data must include `userId`
 - `time`: Token expiration time in minutes
 
 ##### verifyToken
