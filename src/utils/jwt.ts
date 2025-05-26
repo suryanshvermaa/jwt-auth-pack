@@ -4,7 +4,7 @@ interface IVerified{
     verified:boolean,
     data:{
         userId:string|number;
-        email?:string;
+        data?:object;
         iat: number;
         exp: number;
     }
