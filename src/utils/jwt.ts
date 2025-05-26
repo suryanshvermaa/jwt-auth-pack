@@ -14,7 +14,7 @@ class TokenClass{
     constructor(authSecret:string){
         this.authSecret=authSecret;
     }
-    public async createToken(data:object,time:number):Promise<string>{
+    public async createToken(data:{userId:string|number,data:object},time:number):Promise<string>{
         return new Promise(async(resolve,reject)=>{
             try{
                 const token=await jwt.sign(data,this.authSecret,{expiresIn:`${time}m`}); //time in minutes
